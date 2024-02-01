@@ -9,6 +9,7 @@ let paintBtn = document.getElementById("paint-btn");
 let widthValue = document.getElementById("width-value");
 let heightValue = document.getElementById("height-value");
 
+// Eventos de clique e toque
 let events = {
   mouse: {
     down: "mousedown",
@@ -27,6 +28,7 @@ let deviceType = "";
 let draw = false;
 let erase = false;
 
+// Caso seja um dispositivo de toque
 const isTouchDevice = () => {
   try{
     document.createEvent("TouchEvent");
@@ -40,6 +42,7 @@ const isTouchDevice = () => {
 
 isTouchDevice();
 
+// Caso clique no botão da grid
 gridButton.addEventListener("click", () => {
   container.innerHTML = "";
   let count = 0;
@@ -83,6 +86,7 @@ gridButton.addEventListener("click", () => {
   }
 });
 
+// Função para apagar/desenhar na grid
 function checker(elementId) {
     let gridColumns = document.querySelectorAll(".gridCol");
     gridColumns.forEach((element) => {
